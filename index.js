@@ -1,21 +1,22 @@
-const Discord = require('discord.js');
+const Discord = require('discord.js'); require('dotenv').config();
 const bot = new Discord.Client();
-
-const token = 'NzAxNDY4MDc1NDI5NTkzMjA4.XpyBbw.LmkAhiqrX8d2GfjC1sTmJ0iCxgo';
-
+const BOT_TOKEN = process.env.BOT_TOKEN;
 const PREFIX = "/";
 const replies = ["Hi! :3", "Heeey ;)","Hey Hey....","Hello There.","Howdy :)","Hello, how are you?","What's up?","Hi there.","Sup?", "Wassup?"] 
 const replies1 = ["I'm great, how about you?","I'm good, you?","I'm alright wbu?","I'm fine thanks!","Doing alright, you?","I'm ok, you?","Could be better ;/, yourself?"]
 const replies2 = ["Nothing much","Just chilling, wbu?","Just doing my thing ;), u know?","Doing some research, if you know what I mean","Kinda bored","Playing some games","Just hanging out"]
 const replies3 = ["Good evening!","Evening"]
 bot.on('ready', () =>{
+   
+    
     console.log('Sara is online!');
+
 
     bot.user.setActivity('Call of Duty: Warzone');
 
     bot.user.setActivity('Call of Duty: Warzone', 'https://www.twitch.tv/fear4thefallen');
     
-})
+}),
 
 
 
@@ -79,6 +80,6 @@ if (amount < 1) return msg.reply('You have to delete at least 1 message!'); // C
   
 
 
-);
+),
 
-bot.login(token);
+bot.login(BOT_TOKEN)
