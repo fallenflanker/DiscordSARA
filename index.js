@@ -1,5 +1,5 @@
 const Discord = require('discord.js'); require('dotenv').config();
-const bot = new Discord.Client();
+const bot = new discord.Client();
 const BOT_TOKEN = process.env.BOT_TOKEN;
 const PREFIX = "/";
 const replies = ["Hi! :3", "Heeey ;)","Hey Hey....","Hello There.","Howdy :)","Hello, how are you?","What's up?","Hi there.","Sup?", "Wassup?"] 
