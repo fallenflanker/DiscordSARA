@@ -23,7 +23,25 @@ bot.on('ready', () =>{
 
 bot.on('message',(message)=>{
 
-    
+
+   if(message.author.bot) return;   
+   if(message.content.toLowerCase() === '?listennn') {
+    message.channel.send('bot is collecting messages now...');
+    let filter = m => !m.author.bot;
+    let collector = new discord.MessageCollector(message.channel, filter);
+    let destination = client.channels.get('414270268584886276');
+    collector.on('collect', (m, col) =>{
+        console.log("Collected message: " + m.content);
+        if(destination) {
+            destination.send(message.content);
+        }
+
+
+    });
+   }
+   
+   
+
    if(message.content.startsWith(PREFIX + "Hello") )
    {  message.replytext = Math.floor((Math.random() * replies.length) + 0); 
    message.reply(replies[message.replytext]); }
