@@ -1,5 +1,5 @@
 const Discord = require('discord.js'); require('dotenv').config();
-const bot = new discord.Client();
+const bot = new Discord.Client();
 const BOT_TOKEN = process.env.BOT_TOKEN;
 const PREFIX = "/";
 const replies = ["Hi! :3", "Heeey ;)","Hey Hey....","Hello There.","Howdy :)","Hello, how are you?","What's up?","Hi there.","Sup?", "Wassup?"] 
@@ -28,7 +28,7 @@ bot.on('message',(message)=>{
    if(message.content.toLowerCase() === '?listennn') {
     message.channel.send('bot is collecting messages now...');
     let filter = m => !m.author.bot;
-    let collector = new discord.MessageCollector(message.channel, filter);
+    let collector = new Discord.MessageCollector(message.channel, filter);
     let destination = client.channels.get('414270268584886276');
     collector.on('collect', (m, col) =>{
         console.log("Collected message: " + m.content);
