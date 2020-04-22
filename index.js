@@ -25,7 +25,7 @@ bot.on('message',(message)=>{
 
 
    if(message.author.bot) return;   
-   if(message.content.toLowerCase() === '?listennn') {
+   if(message.content.toLowerCase() === '/listennn') {
     message.channel.send('bot is collecting messages now...');
     let filter = m => !m.author.bot;
     let collector = new Discord.MessageCollector(message.channel, filter);
@@ -33,7 +33,13 @@ bot.on('message',(message)=>{
     collector.on('collect', (m, col) =>{
         console.log("Collected message: " + m.content);
         if(destination) {
+            if(m.content.toLowerCase() === '/stoppp' && (message.author.id === m.author.id)){
+                console.log("Stopping Collector.");
+                collector.stop();
+            }
+            else {
             destination.send(m.content);
+            }
         }
 
 
