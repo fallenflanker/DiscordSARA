@@ -33,7 +33,7 @@ bot.on('message',(message)=>{
     collector.on('collect', (m, col) =>{
         console.log("Collected message: " + m.content);
         if(destination) {
-            destination.send(message.content);
+            destination.send(m.content);
         }
 
 
