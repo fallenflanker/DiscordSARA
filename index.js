@@ -29,7 +29,7 @@ bot.on('message',(message)=>{
     message.channel.send('bot is collecting messages now...');
     let filter = m => !m.author.bot;
     let collector = new Discord.MessageCollector(message.channel, filter);
-    let destination = client.channels.get('414270268584886276');
+    let destination = bot.channels.get('414270268584886276');
     collector.on('collect', (m, col) =>{
         console.log("Collected message: " + m.content);
         if(destination) {
